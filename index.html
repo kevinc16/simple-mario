@@ -3,17 +3,35 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="A tiny platform-game starter." />
-    <title>Mario-Style Game Starter</title>
+    <meta name="description" content="A complete one-level Mario-style platform game." />
+    <title>Pixel Valley</title>
     <link rel="stylesheet" href="./src/styles.css" />
   </head>
   <body>
     <main class="game-shell">
-      <header>
-        <h1>Platform Game</h1>
-        <p>Move with A/D or ←/→. Jump with W, ↑, or Space.</p>
+      <header class="titlebar">
+        <div>
+          <span class="eyebrow">World 1–1</span>
+          <h1>Pixel Valley</h1>
+        </div>
+        <p>Move A/D or ←/→ &nbsp;·&nbsp; Jump W, ↑, or Space</p>
       </header>
-      <canvas id="game" width="960" height="540" aria-label="Platform game"></canvas>
+      <section class="game-stage">
+        <div class="hud" aria-live="polite">
+          <span id="score">Score 00000</span>
+          <span id="status">0% to goal</span>
+          <span id="lives">Lives 3</span>
+        </div>
+        <canvas id="game" width="960" height="540" aria-label="Pixel Valley platform game"></canvas>
+        <div id="overlay" class="overlay" hidden>
+          <div class="result-card">
+            <span class="eyebrow">World 1–1</span>
+            <h2 id="overlay-title">Level complete!</h2>
+            <p id="overlay-text"></p>
+            <button id="restart" type="button">Play again</button>
+          </div>
+        </div>
+      </section>
     </main>
     <script type="module" src="./src/game.js"></script>
   </body>
